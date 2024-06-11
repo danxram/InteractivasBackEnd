@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('completed_events', function (Blueprint $table) {
+        Schema::create('client_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_users_id')->constrained();
-            $table->foreignId('events_id')->constrained();
-            $table->dateTime('completion_date');
+            $table->foreignId('privileges_id')->constrained();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('completed_events');
+        Schema::dropIfExists('client_users');
     }
 };
