@@ -22,8 +22,24 @@ class EventsController extends Controller
             }
         
             $events = Event::whereIn('id', $eventsId)->get();
+            //primera conuslta
+
+            
+            $trafics= UserEvent::where('client_users_id', $userId)->pluck('events_id')->toArray();
         
-            return response()->json($events);
+            if (empty($trafics)) {
+                return response()->json(['error' => 'No events found for the user'], 404);
+            }
+        
+            $trafics = Event::whereIn('id', $trafics)
+            ->orderBy('date', 'asc')->get();
+            //segunda consulta
+
+
+            return response()->json([
+                'events' => $events,
+                'trafics' => $trafics
+            ]);
         
     }
 
