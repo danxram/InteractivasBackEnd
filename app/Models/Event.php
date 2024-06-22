@@ -24,4 +24,9 @@ class Event extends Model
     {
         return $this->belongsTo(Category::class, 'categories_id');
     }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'courses_id');
+    }
 }

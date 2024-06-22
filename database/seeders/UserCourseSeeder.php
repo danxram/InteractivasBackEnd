@@ -18,5 +18,8 @@ class UserCourseSeeder extends Seeder
         UserCourse::create(['client_users_id'=>'2','courses_id'=>'2']);
         UserCourse::create(['client_users_id'=>'2','courses_id'=>'3']);
         UserCourse::create(['client_users_id'=>'2','courses_id'=>'4']);
+        UserCourse::create(['client_users_id'=>'2','courses_id'=>'2']);
+        UserCourse::create(['client_users_id'=>'2','courses_id'=>'3']);
+        UserCourse::create(['client_users_id'=>'2','courses_id'=>'4']);
     }
 }
