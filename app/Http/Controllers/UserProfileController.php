@@ -64,4 +64,31 @@ class UserProfileController extends Controller
     {
         //
     }
+
+    public function check(Request $request)
+    {
+        //
+        //return $request;
+        if(!Auth::attempt($request->only('email', 'password')))
+        {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
+        $user = User::where('email', $request['email'])->firstOrFail();
+        
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        $uid =  $user->id;
+        session_start();
+        $_SESSION["uid"] = $uid;
+
+        return response()->json([
+            'code' => 200,
+            'message' => 'Hi '.$user->name,
+            'accessToken' => $token,
+            'token_type' => 'Bearer',
+            'user' => $user
+        ]);
+    }
+
 }

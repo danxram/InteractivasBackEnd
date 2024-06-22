@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->foreignId('categories_id')->constrained();
+            $table->foreignId('courses_id')->constrained();
             $table->string('name');
             $table->string('image');
             $table->date('date');
