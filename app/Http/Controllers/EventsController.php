@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\UserCourse;
 use App\Models\UserEvent;
 use Illuminate\Http\Request;
 
@@ -15,16 +16,16 @@ class EventsController extends Controller
     {
             $userId = $id;
         
-            $eventsId = UserEvent::where('client_users_id', $userId)->pluck('events_id')->toArray();
+            $eventsId = UserCourse::where('client_users_id', $userId)->pluck('courses_id')->toArray();
         
             if (empty($eventsId)) {
                 return response()->json(['error' => 'No events found for the user'], 404);
             }
         
-            $events = Event::whereIn('id', $eventsId)->get();
+            $events = Event::whereIn('courses_id', $eventsId)->get();
             //primera conuslta
 
-            
+
             $trafics= UserEvent::where('client_users_id', $userId)->pluck('events_id')->toArray();
         
             if (empty($trafics)) {
@@ -34,6 +35,8 @@ class EventsController extends Controller
             $trafics = Event::whereIn('id', $trafics)
             ->orderBy('date', 'asc')->get();
             //segunda consulta
+
+            
 
 
             return response()->json([

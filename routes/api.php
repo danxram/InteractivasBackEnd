@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\CourseEventsController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\EventsController;
-use App\Http\Controllers\TrafficController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +27,5 @@ Route::get('/homepage/{id}', [EventsController::class, 'index']);
 Route::get('/courses/{id}', [CoursesController::class, 'index']);
 Route::get('/details/{id}', [DetailController::class, 'index']);
 Route::get('/userProfile/{id}', [UserProfileController::class, 'index']);
+Route::get('/courseEvents/{courseId}/{userId}', [CourseEventsController::class, 'index']);
 Route::post('/admin/account/check', [UserProfileController::class, 'check']);
