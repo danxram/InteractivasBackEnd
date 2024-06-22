@@ -15,11 +15,14 @@ class UserCourseSeeder extends Seeder
     public function run(): void
     {
         //
-        UserCourse::create(['client_users_id'=>'2','courses_id'=>'2']);
+        UserCourse::create(['client_users_id'=>'2','courses_id'=>'1']);
         UserCourse::create(['client_users_id'=>'2','courses_id'=>'3']);
-        UserCourse::create(['client_users_id'=>'2','courses_id'=>'4']);
-        UserCourse::create(['client_users_id'=>'2','courses_id'=>'2']);
-        UserCourse::create(['client_users_id'=>'2','courses_id'=>'3']);
-        UserCourse::create(['client_users_id'=>'2','courses_id'=>'4']);
+        UserCourse::create(['client_users_id'=>'3','courses_id'=>'1']);
+        UserCourse::create(['client_users_id'=>'3','courses_id'=>'4']);
+        UserCourse::create(['client_users_id'=>'3','courses_id'=>'2']);
+        UserCourse::create(['client_users_id'=>'3','courses_id'=>'3']);
+        UserCourse::create(['client_users_id'=>'4','courses_id'=>'2']);
+        UserCourse::create(['client_users_id'=>'4','courses_id'=>'3']);
+        UserCourse::create(['client_users_id'=>'4','courses_id'=>'4']);
     }
 }
