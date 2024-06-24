@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('user_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_users_id')->constrained();
+            $table->foreignId('users_id')->constrained();
             $table->integer('sleep_hours');
             $table->boolean('physical_activity');
             $table->string('health_issues');

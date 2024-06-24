@@ -15,8 +15,8 @@ class UserProfileSeeder extends Seeder
     public function run(): void
     {
         //
-        UserProfile::create(['client_users_id'=>'2','sleep_hours'=>'8','physical_activity'=>'1','health_issues'=>'No','stress'=>'5','specific_diet'=>'No','aditional_info'=>'No']);
-        UserProfile::create(['client_users_id'=>'3','sleep_hours'=>'7','physical_activity'=>'0','health_issues'=>'No','stress'=>'3','specific_diet'=>'No','aditional_info'=>'No']);
-        UserProfile::create(['client_users_id'=>'4','sleep_hours'=>'8','physical_activity'=>'1','health_issues'=>'No','stress'=>'5','specific_diet'=>'No','aditional_info'=>'No']);
+        UserProfile::create(['users_id'=>'2','sleep_hours'=>'8','physical_activity'=>'1','health_issues'=>'No','stress'=>'5','specific_diet'=>'No','aditional_info'=>'No']);
+        UserProfile::create(['users_id'=>'3','sleep_hours'=>'7','physical_activity'=>'0','health_issues'=>'No','stress'=>'3','specific_diet'=>'No','aditional_info'=>'No']);
+        UserProfile::create(['users_id'=>'4','sleep_hours'=>'8','physical_activity'=>'1','health_issues'=>'No','stress'=>'5','specific_diet'=>'No','aditional_info'=>'No']);
     }
 }
