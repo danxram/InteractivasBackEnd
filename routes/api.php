@@ -28,4 +28,4 @@ Route::get('/courses/{id}', [CoursesController::class, 'index']);
 Route::get('/details/{id}', [DetailController::class, 'index']);
 Route::get('/userProfile/{id}', [UserProfileController::class, 'index']);
 Route::get('/courseEvents/{courseId}/{userId}', [CourseEventsController::class, 'index']);
-Route::post('/admin/account/check', [UserProfileController::class, 'check']);
+Route::post('/login', [UserProfileController::class, 'login']);
