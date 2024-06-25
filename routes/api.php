@@ -27,5 +27,5 @@ Route::get('/homepage/{id}', [EventsController::class, 'index']);
 Route::get('/courses/{id}', [CoursesController::class, 'index']);
 Route::get('/details/{id}', [DetailController::class, 'index']);
 Route::get('/userProfile/{id}', [UserProfileController::class, 'index']);
-Route::get('/courseEvents/{courseId}/{userId}', [CourseEventsController::class, 'index']);
+Route::get('/courseEvents/{courseId}', [CourseEventsController::class, 'index']);
 Route::post('/login', [UserProfileController::class, 'login']);

@@ -28,7 +28,10 @@ class UserProfileController extends Controller
     public function index($id)
     {
         //
-        $profile= ClientUser::where('id', $id)->get();
+        // $profile= ClientUser::where('id', $id)->get();
+        // return response()->json($profile);
+
+        $profile= User::find($id);
         return response()->json($profile);
     }
 

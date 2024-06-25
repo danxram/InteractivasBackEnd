@@ -26,7 +26,7 @@ class EventsController extends Controller
             //primera conuslta
 
 
-            $trafics= UserEvent::where('client_users_id', $userId)->pluck('events_id')->toArray();
+            $trafics= UserEvent::where('users_id', $userId)->pluck('events_id')->toArray();
         
             if (empty($trafics)) {
                 return response()->json(['error' => 'No events found for the user'], 404);

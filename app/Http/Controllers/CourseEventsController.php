@@ -10,7 +10,7 @@ class CourseEventsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($courseId, $userId)
+    public function index($courseId)
     {
         //
 

@@ -16,7 +16,7 @@ class CoursesController extends Controller
         //
         $userId = $id;
         
-            $coursesId = UserCourse::where('client_users_id', $userId)->pluck('courses_id')->toArray();
+            $coursesId = UserCourse::where('users_id', $userId)->pluck('courses_id')->toArray();
         
             if (empty($coursesId)) {
                 return response()->json(['error' => 'No courses found for the user'], 404);
