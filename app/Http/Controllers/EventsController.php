@@ -16,7 +16,7 @@ class EventsController extends Controller
     {
             $userId = $id;
         
-            $eventsId = UserCourse::where('client_users_id', $userId)->pluck('courses_id')->toArray();
+            $eventsId = UserCourse::where('users_id', $userId)->pluck('courses_id')->toArray();
         
             if (empty($eventsId)) {
                 return response()->json(['error' => 'No events found for the user'], 404);
