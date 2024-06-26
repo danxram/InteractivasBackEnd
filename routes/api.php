@@ -29,3 +29,5 @@ Route::get('/details/{id}', [DetailController::class, 'index']);
 Route::get('/userProfile/{id}', [UserProfileController::class, 'index']);
 Route::get('/courseEvents/{courseId}', [CourseEventsController::class, 'index']);
 Route::post('/login', [UserProfileController::class, 'login']);
+Route::post('/signup', [UserProfileController::class, 'signup']);
+Route::post('/user-profile', [UserProfileController::class, 'store']);
