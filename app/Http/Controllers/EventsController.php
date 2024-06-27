@@ -22,7 +22,7 @@ class EventsController extends Controller
                 return response()->json(['error' => 'No events found for the user'], 404);
             }
         
-            $events = Event::whereIn('courses_id', $eventsId)->get();
+            $events = Event::whereIn('courses_id', $eventsId)->orderBy('date', 'asc')->where('status', 1)->limit(6)->get();
             //primera conuslta
 
 
@@ -32,8 +32,8 @@ class EventsController extends Controller
                 return response()->json(['error' => 'No events found for the user'], 404);
             }
         
-            $trafics = Event::whereIn('id', $trafics)
-            ->orderBy('date', 'asc')->get();
+            $trafics = Event::whereIn('id', $trafics)->where('status', 1)
+            ->orderBy('date', 'asc')->limit(3)->get();
             //segunda consulta
 
             
